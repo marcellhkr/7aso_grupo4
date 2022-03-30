@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: blog-django-py-git
-          #image: openshiftkatacoda/blog-django-py
+          image: openshiftkatacoda/blog-django-py
           ports:
             - containerPort: 8080
               protocol: TCP
