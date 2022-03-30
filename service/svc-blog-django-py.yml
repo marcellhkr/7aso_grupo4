@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: blog-django-py-git
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: blog-django-py-git
+    deploymentconfig: blog-django-py-git
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster

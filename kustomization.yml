@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mrico-fiap-tst
+resources:
+  - secret/secret-blog-django-py.yml
+  - secret/secret-sample-database.yml
+  - deployment/dp-blog-django-py-git.yml
+  - deployment/dp-config-sample-database.yml
+  - hpa/hpa-blog-django-py.yml  
+  - service/svc-blog-django-py.yml
+  - service/svc-sample-database.yml
+  - route/route-blog-django-py.yml
+  - pvc/pvc-sample-database.yml
