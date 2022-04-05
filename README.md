@@ -25,3 +25,4 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
 Antes de iniciar o processo, é necessário criar o projeto com o nome desejado no OpenShift. Isso pode ser feito através do comando `oc new-project nome_projeto` ou através do console web do cluster.
 
 Para criar toda a infra, é só executar o comando `oc apply -k ./<diretorio_raiz_repositorio>` (ex.: `oc apply -k ./7aso_grupo4`).
+- Para logar na aplicação use usuário e senha iguais a developer.
