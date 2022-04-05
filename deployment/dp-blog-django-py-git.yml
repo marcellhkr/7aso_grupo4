@@ -4,12 +4,7 @@ metadata:
   name: blog-django-py-git
   labels:
     app: blog-django-py-git
-    app.kubernetes.io/component: blog-django-py-git
-    app.kubernetes.io/instance: blog-django-py-git
     app.kubernetes.io/name: python
-    app.kubernetes.io/part-of: blog-django-py-git-app
-    app.openshift.io/runtime: python
-    app.openshift.io/runtime-version: 3.8-ubi7
 spec:
   replicas: 1
   selector:
@@ -24,13 +19,11 @@ spec:
     spec:
       containers:
         - name: blog-django-py-git
-          image: openshiftkatacoda/blog-django-py
+          image: marcellhkr/blog-django-py
           ports:
             - containerPort: 8080
               protocol: TCP
           env:
-            - name: DATABASE_URL
-              value: 'postgresql://sampledb:sampledb@sample-database:5432/sampledb'
             - name: DATABASE_SERVICE_NAME
               valueFrom:
                 secretKeyRef:
@@ -51,6 +44,10 @@ spec:
                 secretKeyRef:
                   name: blog-django-py
                   key: db-name
+            - name: BLOG_SITE_NAME
+              value: 7aso_grupo4
+            - name: BLOG_BANNER_COLOR
+              value: blue
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
